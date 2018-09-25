@@ -15,7 +15,6 @@ export class DynoCardComponent extends DynoCardBaseComponent {
 
     this.loadChartData()
   }
-
   async loadChartData() {
     await this.dataService.get(this.urlManagingService.getDynoCardSampleData).toPromise()
 
