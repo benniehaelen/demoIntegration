@@ -2,13 +2,193 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "libs": {
+      "root": "libs",
+      "sourceRoot": "libs",
+      "projectType": "library",
+      "prefix": "dynocard",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "testing/test.libs.ts",
+            "tsConfig": "testing/tsconfig.libs.spec.json",
+            "karmaConfig": "testing/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "testing/tsconfig.libs.json",
+              "testing/tsconfig.libs.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "xplat": {
+      "root": "xplat",
+      "sourceRoot": "xplat",
+      "projectType": "library",
+      "prefix": "dynocard",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "testing/test.xplat.ts",
+            "tsConfig": "testing/tsconfig.xplat.spec.json",
+            "karmaConfig": "testing/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "testing/tsconfig.xplat.json",
+              "testing/tsconfig.xplat.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "web-dynocard": {
+      "root": "apps/web-dynocard/",
+      "sourceRoot": "apps/web-dynocard/src",
+      "projectType": "application",
+      "prefix": "iot-edge-dynocard",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/web-dynocard",
+            "index": "apps/web-dynocard/src/index.html",
+            "main": "apps/web-dynocard/src/main.ts",
+            "polyfills": "apps/web-dynocard/src/polyfills.ts",
+            "tsConfig": "apps/web-dynocard/tsconfig.app.json",
+            "assets": [
+              "apps/web-dynocard/src/favicon.ico",
+              "apps/web-dynocard/src/assets"
+            ],
+            "styles": [
+              "xplat/web/scss/_index.scss",
+              "apps/web-dynocard/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/web-dynocard/src/environments/environment.ts",
+                  "with": "apps/web-dynocard/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "web-dynocard:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "web-dynocard:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "web-dynocard:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/web-dynocard/src/test.ts",
+            "polyfills": "apps/web-dynocard/src/polyfills.ts",
+            "tsConfig": "apps/web-dynocard/tsconfig.spec.json",
+            "karmaConfig": "apps/web-dynocard/karma.conf.js",
+            "styles": [
+              "apps/web-dynocard/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/web-dynocard/src/favicon.ico",
+              "apps/web-dynocard/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/web-dynocard/tsconfig.app.json",
+              "apps/web-dynocard/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "web-dynocard-e2e": {
+      "root": "apps/web-dynocard-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/web-dynocard-e2e/protractor.conf.js",
+            "devServerTarget": "web-dynocard:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "web-dynocard:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/web-dynocard-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/schematics"
-    
+    "defaultCollection": "@nstudio/schematics"
   }
 }

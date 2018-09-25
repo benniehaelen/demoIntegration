@@ -16,6 +16,15 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@iot-edge-dynocard/*": [
+        "libs/*"
+      ],
+      "@iot-edge-dynocard/web": [
+        "xplat/web/index.ts"
+      ],
+      "@iot-edge-dynocard/web/*": [
+        "xplat/web/*"
+      ]
     }
   },
   "exclude": [

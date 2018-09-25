@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "iot-edge-dynocard",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "iot-edge-dynocard",
+      "kebab-case"
+    ]
+  }
+}

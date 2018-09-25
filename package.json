@@ -23,7 +23,10 @@
     "update:check": "ng update",
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
-    "help": "./node_modules/.bin/nx help"
+    "help": "./node_modules/.bin/nx help",
+    "clean.shared": "cd libs/ && git clean -dfX && cd ../xplat/ && git clean -dfX",
+    "clean": "npx rimraf hooks node_modules package-lock.json && npm i",
+    "start.web.dynocard": "ng serve web-dynocard"
   },
   "private": true,
   "dependencies": {
@@ -41,32 +44,40 @@
     "@nrwl/nx": "6.3.1",
     "@ngrx/effects": "6.0.1",
     "@ngrx/router-store": "6.0.1",
-    "@ngrx/store": "6.0.1"
+    "@ngrx/store": "6.0.1",
+    "@ngx-translate/core": "~10.0.1",
+    "@ngx-translate/http-loader": "~3.0.1",
+    "@iot-edge-dynocard/scss": "file:libs/scss",
+    "reflect-metadata": "^0.1.12"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.7.0",
     "@angular/cli": "6.1.2",
     "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",
-    "@angular-devkit/build-angular": "~0.7.0",
     "@ngrx/store-devtools": "6.0.1",
-    "ngrx-store-freeze": "0.2.4",
     "@nrwl/schematics": "6.3.1",
-    "jasmine-marbles": "0.3.1",
+    "@nstudio/schematics": "^6.2.7",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
     "jasmine-core": "~2.99.1",
+    "jasmine-marbles": "0.3.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~1.4.2",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ngrx-store-freeze": "0.2.4",
+    "prettier": "1.13.7",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
-    "typescript": "~2.7.2",
-    "prettier": "1.13.7"
+    "typescript": "~2.7.2"
+  },
+  "xplat": {
+    "prefix": "dynocard"
   }
 }
