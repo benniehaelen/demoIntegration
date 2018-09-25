@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6355b71e-49cc-4ecf-8d19-db915c70f869" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/web-dynocard/src/assets/data.tsv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/iot-edge-dynocard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/iot-edge-dynocard.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-dynocard/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web-dynocard/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -32,7 +23,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="2" />
           <entry key="html" value="14" />
           <entry key="json" value="12" />
           <entry key="md" value="1" />
@@ -47,7 +38,7 @@
           <entry key="HTML" value="14" />
           <entry key="JSON" value="12" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="PLAIN_TEXT" value="4" />
           <entry key="SCSS" value="3" />
           <entry key="Scratch" value="1" />
           <entry key="TypeScript" value="158" />
@@ -62,11 +53,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="16" />
+          <entry key="gitignore" value="1" />
           <entry key="html" value="124" />
           <entry key="json" value="6" />
           <entry key="md" value="754" />
           <entry key="ts" value="764" />
-          <entry key="txt" value="229" />
+          <entry key="txt" value="262" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -75,7 +67,7 @@
           <entry key="HTML" value="124" />
           <entry key="JSON" value="6" />
           <entry key="Markdown" value="754" />
-          <entry key="PLAIN_TEXT" value="229" />
+          <entry key="PLAIN_TEXT" value="263" />
           <entry key="TypeScript" value="764" />
         </counts>
       </usages-collector>
@@ -110,9 +102,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.style.css">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -213,7 +218,6 @@
         <option value="$PROJECT_DIR$/apps/web-dynocard/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/libs/features/charts/base/dyno-card-base.component.ts" />
         <option value="$PROJECT_DIR$/libs/core/services/url-managing.service.ts" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/xplat/web/package.json" />
         <option value="$PROJECT_DIR$/angular.json" />
@@ -221,6 +225,7 @@
         <option value="$PROJECT_DIR$/apps/web-dynocard/src/index.html" />
         <option value="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.ts" />
         <option value="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.style.css" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -283,6 +288,11 @@
             <path>
               <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
               <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
@@ -488,7 +498,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537894948091</updated>
-      <workItem from="1537894950822" duration="17350000" />
+      <workItem from="1537894950822" duration="17671000" />
     </task>
     <task id="LOCAL-00001" summary="Initial app scaffoldings, cross platform ready - only web platform added and Charts feature module">
       <created>1537909012203</created>
@@ -511,11 +521,18 @@
       <option name="project" value="LOCAL" />
       <updated>1537912022321</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add D3 sample data&#10;Update readme">
+      <created>1537918162596</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1537918162596</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17350000" />
+    <option name="totallyTimeSpent" value="17671000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1080" y="167" width="2396" height="1403" extended-state="0" />
@@ -523,13 +540,13 @@
     <layout>
       <window_info id="Designer" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18760684" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18760684" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TypeScript" order="0" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.32920793" />
+      <window_info anchor="bottom" id="Terminal" order="4" visible="true" weight="0.32920793" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32920793" />
@@ -542,7 +559,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info active="true" anchor="right" id="Run" order="5" visible="true" weight="0.2474359" />
+      <window_info anchor="right" id="Run" order="5" visible="true" weight="0.2474359" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +574,8 @@
     <MESSAGE value="Initial app scaffoldings, cross platform ready - only web platform added and Charts feature module" />
     <MESSAGE value="Add data service and urlmanaging service, load data in dynocard component oninit" />
     <MESSAGE value="Add data service and urlmanaging service, load data in dynocard component oninit&#10;Commit Dist folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add data service and urlmanaging service, load data in dynocard component oninit&#10;Commit Dist folder" />
+    <MESSAGE value="Add D3 sample data&#10;Update readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add D3 sample data&#10;Update readme" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/xplat/web/features/items/items.module.ts">
@@ -972,13 +990,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -1065,7 +1076,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.style.css">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
