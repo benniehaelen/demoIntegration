@@ -1,6 +1,23 @@
 # IotEdgeDynocard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) using [Nrwl Nx](https://nrwl.io/nx).
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) using [xPlat](https://nstudio.io/xplat/), an implementation of [Nrwl Nx](https://nrwl.io/nx) 
+
+## Pushing to Azure
+
+This project is pushed to an Azure App Service located at [https://iotdynocardmoxa-web.azurewebsites.net](https://iotdynocardmoxa-web.azurewebsites.net/). The compiled project is pushed using git subtrees.
+
+The specific command to push the DynoCard webapp is:
+- `git subtree push --prefix dist/apps/web-dynocard azure master`
+
+The command syntax to create and manage a git subtree is:
+
+- `git subtree add —prefix [path_to_folder]`
+- `git subtree pull —prefix [path_to_folder] [remote] [remote-branch]`
+- `git subtree push —prefix [path_to_folder] [remote] [remote-branch]`
+
+## Cross-Platform Development with xPlat
+
+The project is scaffolded for cross platform development using Angular and NativeScript. Currently, only the `web` platform is setup. The `NativeScript` platform can be added with a few commands, see [xPlat documentation](https://nstudio.io/xplat/).
 
 ## Nrwl Extensions for Angular (Nx)
 

@@ -38,17 +38,17 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
-    "core-js": "^2.5.4",
-    "rxjs": "^6.0.0",
-    "zone.js": "^0.8.26",
-    "@nrwl/nx": "6.3.1",
+    "@iot-edge-dynocard/scss": "file:libs/scss",
     "@ngrx/effects": "6.0.1",
     "@ngrx/router-store": "6.0.1",
     "@ngrx/store": "6.0.1",
     "@ngx-translate/core": "~10.0.1",
     "@ngx-translate/http-loader": "~3.0.1",
-    "@iot-edge-dynocard/scss": "file:libs/scss",
-    "reflect-metadata": "^0.1.12"
+    "@nrwl/nx": "6.3.1",
+    "core-js": "^2.5.4",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.0.0",
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",
