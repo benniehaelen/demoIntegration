@@ -15,11 +15,59 @@ declare var d3;
 
 export class DynoCardComponent extends DynoCardBaseComponent {
   chartData: any;
+  //---Power Bi
+  private target: HTMLElement;
+  private settings: VisualSettings;
+  private refoptions: VisualUpdateOptions;
+
+  //--- SVG
+  private dynoCardSvg: d3.Selection<SVGAElement>;
+  private surCrdSvgGrp: d3.Selection<SVGAElement>;
+  private pumpCrdSvgGrp: d3.Selection<SVGAElement>;
+  private drawLineFunc: d3.svg.Line<DataPoint>;
+  private svgCanvasHeight: number;
+
+  // axis
+  private xAxisGroup: d3.Selection<SVGAElement>;
+  private yAxisGroupSurface: d3.Selection<SVGAElement>;
+  private yAxisGroupPump: d3.Selection<SVGAElement>;
+  private xAxis_Position;
+  private yAxis_Load;
+
+  private dataSet: ViewModel;
+  private eventSelVal: any = 'all';
+  private pumpSelVal: any = 'all';
+  private eventIdDDList;
+  private cardTypeDDList;
+  private plotteSurfacedPath: any;
+  private plottePumpPath: any;
+  private isDropDownRender: boolean = false;
+  private margin = { top: 100, right: 50, bottom: 80, left: 5 }
+  private totalAnimationTime: number = 2000;
 
   constructor(private dataService: DataService, private urlManagingService: UrlManagingService) {
     super();
+    this.target = options.element;
+
+    if (typeof document !== "undefined") {
+      this.target.appendChild(HtmlControl.createInitialHeader());
+      let animateButton = HtmlControl.createAnimationButton(this);
+      document.getElementById("buttonDiv").appendChild(animateButton);
+
+      this.dynoCardSvg = d3.select(document.getElementById("dynoCardDiv")).append("svg").classed("dyno-svg-cls", true);
+
+      this.surCrdSvgGrp = this.dynoCardSvg.append("g").classed("sur-svg-grp-cls", true);
+      this.surCrdSvgGrp.attr({ id: "surfaceCard" });
+      this.pumpCrdSvgGrp = this.dynoCardSvg.append("g").classed("pump-svg-grp-cls", true);
+      this.pumpCrdSvgGrp.attr({ id: "pumpCard" });
+
+      this.xAxisGroup = this.dynoCardSvg.append("g").classed("x-axis", true);
+      this.yAxisGroupSurface = this.dynoCardSvg.append("g").classed("y-axis", true);
+      this.yAxisGroupPump = this.dynoCardSvg.append("g").classed("y-axis-pump", true);
+    }
 
     this.loadChartData()
+
   }
 
   async loadChartData() {

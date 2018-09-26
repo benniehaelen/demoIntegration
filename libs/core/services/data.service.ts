@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError as throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { isNativeScript } from '@iot-edge-dynocard/utils';
 
 /*
  * Shared Utilities
@@ -23,12 +24,41 @@ interface RequestOptions {
 
 @Injectable()
 export class DataService {
+  private mockData = {}
   private requestOptions: RequestOptions = {};
 
   constructor(private http: HttpClient) {
 
+    this.mockDataInit();
+
   }
 
+  async mockDataInit() {
+
+    // For Web
+    if (!isNativeScript()) {
+      // resolve mockdata with webpack at compile time so its available for web, because web has no filesystem access like native
+      require('../../../apps/web-dynocard/src/assets/dataset1')
+        .then((response) => {
+          this.mockData = response;
+        })
+        .catch((err) => {
+          return err;
+        });
+
+      // For nativescript
+    }
+    // else {
+    //   // Nativescript will use `file-system` to access the file locally, at a different path than webpack
+    //   this.fileReader.readJSON("../../assets/mock-data/course-plan")
+    //     .then((response) => {
+    //       this.mockData = response;
+    //     })
+    //     .catch((err) => {
+    //       err;
+    //     });
+    // }
+  }
 
   get(url: string, requestOptionsArgs?, options?: { mockData: boolean, mockDataFile?: string }): Observable<any> {
     const self = this;
