@@ -117,15 +117,13 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
   private plottePumpPath: any;
   private isDropDownRender: boolean = false;
   private margin = { top: 150, right: 100, bottom: -100, left: 0 }
-  private totalAnimationTime: number = 5000;
+  private totalAnimationTime: number = 2000;
 
   constructor(private dataService: DataService, private urlManagingService: UrlManagingService) {
     super();
     this.svgCanvasWidth = 1200;
     this.svgCanvasHeight = 560;
-
     this.loadChartData()
-
   }
 
   ngOnInit() {
@@ -202,12 +200,14 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
       "stroke": "gray"
     });
 
+    // Convert the string to a number, so .max can get the correct value. it should but a number but for some reason .max isn't reading it as a number, so force it to.
+    this.dataSet.dataPoints.forEach(d => {
+      d.position = parseInt(<any>d.position, 10);
+    })
+
     //--- Define X & Y  Axis Scale and Line
-    let xMax = d3.max(this.dataSet.dataPoints, d => {
-      return d.position
-    });
-    xMax = 14000;
-    this.xAxis_Position = d3.scale.linear().domain([-1, xMax]).range([0, this.svgCanvasWidth]);
+    const xMax = d3.max(this.dataSet.dataPoints, d => d.position);
+    this.xAxis_Position = d3.scale.linear().domain([-1, xMax]).range([-1, this.svgCanvasWidth - 100]);
     this.yAxis_Load = d3.scale.linear().domain(d3.extent(this.dataSet.dataPoints, d => d.load)).range([this.svgCanvasHeight / 2, 0]);
 
     const xAxisLine = d3.svg.axis().scale(this.xAxis_Position).orient("bottom").tickSize(5).tickFormat(d => d + ' in');
@@ -215,7 +215,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
       transform: "translate(" + this.margin.right + ", " + (this.svgCanvasHeight - 20) + ")"
     });
     const yAxisLine = d3.svg.axis().scale(this.yAxis_Load).orient("left").tickSize(5).tickFormat(d =>
-      Number(d) / 1 + ' klb');
+      Number(d) / 1000 + ' klb');
     this.yAxisGroupSurface.call(yAxisLine).attr({
       transform: "translate(" + this.margin.right + ", 5)"
     });
@@ -269,6 +269,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
             });
           }
 
+          // console.log(retDataView);
           resolve(retDataView);
 
         }.bind(this))
@@ -281,7 +282,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
     plotSurfacePath.exit().remove();
     plotSurfacePath.attr("stroke", "steelblue")
       .attr("stroke-width", 2)
-      .attr("fill", "none")
+      .attr("fill", "#ccc")
       .attr("d", this.drawLineFunc);
     this.plotteSurfacedPath = d3.select(document.getElementById("surfaceCard")).selectAll("path");
     const surfacePathLength = this.plotteSurfacedPath.node().getTotalLength();
@@ -290,7 +291,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
       .attr("stroke-dasharray", surfacePathLength + " " + surfacePathLength)
       .attr("stroke-dashoffset", surfacePathLength)
       .transition()
-      .duration(1000)
+      .duration(2000)
       .ease("linear")
       .attr("stroke-dashoffset", 0);
 
@@ -309,7 +310,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
       .attr("stroke-dasharray", pumpPathLength + " " + pumpPathLength)
       .attr("stroke-dashoffset", pumpPathLength)
       .transition()
-      .duration(1000)
+      .duration(2000)
       .ease("linear")
       .attr("stroke-dashoffset", 0);
     this.surCrdSvgGrp.attr({
