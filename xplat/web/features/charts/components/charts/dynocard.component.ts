@@ -64,16 +64,16 @@ export interface VisualUpdateOptions {
 }
 
 export class DataColumns {
-  static pumpId = "PumpId";
-  static eventId = "EventId";
-  static cardHeaderId = "CardHeaderID";
-  static epocDate = "EpocDate";
-  static startDate = "StartDate";
-  static endDate = "EndDate";
-  static cardType = "CardType";
-  static cardId = "CardId";
-  static position = "Postition";
-  static load = "Load";
+  static pumpId = "pumpId";
+  static eventId = "eventId";
+  static cardHeaderId = "cardHeaderID";
+  static epocDate = "epocDate";
+  static startDate = "startDate";
+  static endDate = "endDate";
+  static cardType = "cardType";
+  static cardId = "cardId";
+  static position = "position";
+  static load = "load";
 }
 
 @Component({
@@ -127,7 +127,7 @@ export class DynoCardComponent extends DynoCardBaseComponent {
 
   ngOnInit() {
     this.controls.nativeElement.appendChild(this.createInitialHeader());
-    const animateButton = this.createAnimationButton(this);
+    const animateButton = this.createAnimationButton();
     document.getElementById("buttonDiv").appendChild(animateButton);
   }
 
@@ -183,8 +183,8 @@ export class DynoCardComponent extends DynoCardBaseComponent {
     //// create this in angular
     const pumpDD = this.createDropDown(DataColumns.pumpId);
     const eventDD = this.createDropDown(DataColumns.eventId);
-    const stratDatePicker = this.createDateTimePicker(DataColumns.startDate, this);
-    const endDatePicker = this.createDateTimePicker(DataColumns.endDate, this);
+    const stratDatePicker = this.createDateTimePicker(DataColumns.startDate);
+    const endDatePicker = this.createDateTimePicker(DataColumns.endDate);
     document.getElementById("controlDiv").appendChild(pumpDD);
     document.getElementById("controlDiv").appendChild(stratDatePicker);
     document.getElementById("controlDiv").appendChild(endDatePicker);
@@ -201,9 +201,9 @@ export class DynoCardComponent extends DynoCardBaseComponent {
     });
 
     //--- Define X & Y  Axis Scale and Line
-    const xMax = d3.max(this.dataSet.dataPoints, d => d.Position);
+    const xMax = d3.max(this.dataSet.dataPoints, d => d.position);
     this.xAxis_Position = d3.scale.linear().domain([-1, xMax]).range([0, this.svgCanvasWidth]);
-    this.yAxis_Load = d3.scale.linear().domain(d3.extent(this.dataSet.dataPoints, d => d.Load)).range([this.svgCanvasHeight / 2, 0]);
+    this.yAxis_Load = d3.scale.linear().domain(d3.extent(this.dataSet.dataPoints, d => d.load)).range([this.svgCanvasHeight / 2, 0]);
 
     const xAxisLine = d3.svg.axis().scale(this.xAxis_Position).orient("bottom").tickSize(5).tickFormat(d => d + ' in');
     this.xAxisGroup.call(xAxisLine).attr({
@@ -236,9 +236,10 @@ export class DynoCardComponent extends DynoCardBaseComponent {
     //     return this.yAxis_Load(dp.load);
     //   })
     //   .curve(d3.curveCardinal);
-    //
-    // //this.updateDynoCardGraph(options);
-    // this.animateGraph(this.updateGraphData());
+
+
+    //this.updateDynoCardGraph(options);
+    this.animateGraph(this.updateGraphData());
 
   }
 
@@ -249,7 +250,7 @@ export class DynoCardComponent extends DynoCardBaseComponent {
       let retDataView: ViewModel
 
       d3.csv("assets/dataset1.csv")
-        .row(this.rowConversion)
+      // .row(this.rowConversion)
         .get(function (error, data) {
           if (error) reject(error);
           // console.log(data);
@@ -258,7 +259,7 @@ export class DynoCardComponent extends DynoCardBaseComponent {
 
           retDataView = {
             dataPoints: sampleData,
-            maxValue: d3.max(sampleData, d => d.Load)
+            maxValue: d3.max(sampleData, d => d.load)
           }
 
           // what is supposed to go here?
@@ -268,28 +269,28 @@ export class DynoCardComponent extends DynoCardBaseComponent {
           const dataView = [{ data: 123 }];
           const columnArr = [
             {
-              roles: { PumpId: true }
+              roles: { pumpId: true }
             },
             {
-              roles: { EventId: true }
+              roles: { eventId: true }
             },
             {
-              roles: { CardHeaderID: true }
+              roles: { cardHeaderID: true }
             },
             {
-              roles: { CardType: true }
+              roles: { cardType: true }
             },
             {
-              roles: { EpocDate: true }
+              roles: { epocDate: true }
             },
             {
-              roles: { CardId: true }
+              roles: { cardId: true }
             },
             {
-              roles: { Postion: true }
+              roles: { position: true }
             },
             {
-              roles: { Load: true }
+              roles: { load: true }
             }
           ];
 
@@ -413,7 +414,7 @@ export class DynoCardComponent extends DynoCardBaseComponent {
 
     const reportTitle: HTMLElement = document.createElement("p");
     reportTitle.setAttribute("class", "text-center")
-    reportTitle.appendChild(document.createTextNode(" Graph: Dyno Card"));
+    // reportTitle.appendChild(document.createTextNode(" Graph: Dyno Card"));
     baseDiv.appendChild(reportTitle);
 
     const controlDivRow: HTMLElement = document.createElement("div");
@@ -438,7 +439,7 @@ export class DynoCardComponent extends DynoCardBaseComponent {
     return baseDiv;
   }
 
-  private createDateTimePicker(argDateType, argRef) {
+  private createDateTimePicker(argDateType) {
 
     const ddDiv = document.createElement("div");
     ddDiv.setAttribute("class", "col-xs-3 form-group");
@@ -452,7 +453,7 @@ export class DynoCardComponent extends DynoCardBaseComponent {
     dateInput.setAttribute("type", "text");
     dateInput.setAttribute("id", argDateType);
     dateInput.onchange = () => {
-      argRef.rerenderEventDropDown();
+      this.rerenderEventDropDown();
     }
 
     const spanOuter = document.createElement("span");
@@ -461,16 +462,22 @@ export class DynoCardComponent extends DynoCardBaseComponent {
     spanIcon.setAttribute("class", "glyphicon glyphicon-calendar");
     spanOuter.appendChild(spanIcon);
 
-    if (argDateType === DataColumns.startDate) dateInput.setAttribute("placeholder", "Start Date");
-    else dateInput.setAttribute("placeholder", "End Date");
+    if (argDateType === DataColumns.startDate) {
+      dateInput.setAttribute("placeholder", "Start Date");
+      dateInput.setAttribute("value", "04/08/1996 12:00 AM");
+    }
+    else {
+      dateInput.setAttribute("placeholder", "End Date");
+      dateInput.setAttribute("value", "04/08/2019 12:00 AM");
 
+    }
 
     spanOuter.onmouseover = (event: Event) => {
       $('#' + argDateType + "Picker").datetimepicker();
     }
 
     spanOuter.onclick = () => {
-      argRef.rerenderEventDropDown();
+      this.rerenderEventDropDown();
     }
 
     dateDiv.appendChild(dateInput);
@@ -480,14 +487,14 @@ export class DynoCardComponent extends DynoCardBaseComponent {
     return ddDiv;
   }
 
-  private createAnimationButton(argRef) {
+  private createAnimationButton() {
     const animationButton = document.createElement("button");
     animationButton.setAttribute("type", "button");
     animationButton.setAttribute("class", "btn btn-success center-block");
     animationButton.textContent = "Run DynoCard Animation";
     animationButton.onclick = function () {
-      argRef.animateGraph(argRef.updateGraphData());
-    }
+      this.animateGraph(this.updateGraphData());
+    }.bind(this);
     return animationButton;
   }
 
@@ -531,15 +538,15 @@ export class DynoCardComponent extends DynoCardBaseComponent {
 
     if (argDropDownType === DataColumns.pumpId) {
       labelDiv.appendChild(document.createTextNode("Pump: "))
-      const pumpIdList = _.uniq(_.map(this.dataSet.dataPoints.dataPoints, 'pumpId'));
+      const pumpIdList = _.uniq(_.map(this.dataSet.dataPoints, 'pumpId'));
       dropDownData = _.map(pumpIdList, item => String(item))
     } else if (argDropDownType === DataColumns.cardType) {
       labelDiv.appendChild(document.createTextNode("Card Type"))
-      dropDownData = _.uniq(_.map(this.dataSet.dataPoints.dataPoints, 'cardType'));
+      dropDownData = _.uniq(_.map(this.dataSet.dataPoints, 'cardType'));
       this.cardTypeDDList = dropDownData;
     } else if (argDropDownType === DataColumns.eventId) {
       labelDiv.appendChild(document.createTextNode("Event:  "))
-      dropDownData = _.uniq(_.map(this.dataSet.dataPoints.dataPoints, 'eventId'));
+      dropDownData = _.uniq(_.map(this.dataSet.dataPoints, 'eventId'));
       this.eventIdDDList = dropDownData;
     }
 
