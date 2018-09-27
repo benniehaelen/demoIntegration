@@ -237,14 +237,51 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
 
     // For some reason, the first time the animateGraph() method is called, the surfacePumpCard does not render properly, and cuts off the right end of the lines. If animateGraph() is called a second time, then it renders fine, so this accomplishes that. Not ideal but it works.
     this.animateGraph(this.updateGraphData())
-    let count = 0;
-    const interval = setInterval(function () {
-      count++;
-      // console.log('animating graph');
+    setTimeout(function () {
       this.animateGraph(this.updateGraphData())
-      if (count > 0) clearInterval(interval)
-    }.bind(this), 1900)
+    }.bind(this), 2000)
 
+  }
+
+  private animateGraph(argGraphDataSet: DataPoint[]
+  ) {
+    const allDataPoints = _.sortBy(argGraphDataSet, 'cardId');
+    const surfaceDataGrp = _.groupBy(_.filter(allDataPoints, { 'cardType': 'S' }), 'cardHeaderId');
+    const pumpCardDataGrp = _.groupBy(_.filter(allDataPoints, { 'cardType': 'P' }), 'cardHeaderId');
+    const surCardDataArr = _.map(surfaceDataGrp, surfaceDataGrp.value);
+    const pumpCardDataArr = _.map(pumpCardDataGrp, pumpCardDataGrp.value);
+    this.surCrdSvgGrp.selectAll("path").remove();
+    this.pumpCrdSvgGrp.selectAll("path").remove();
+
+    const self = this;
+    for (const ci in surCardDataArr) {
+      const surCardData = surCardDataArr[ci];
+      const pumpCardData = pumpCardDataArr[ci];
+      setTimeout(() => {
+        // console.log('rendering:', ci);
+        this.renderCard(ci, surCardData, pumpCardData);
+      }, +ci * self.totalAnimationTime + 2000);
+    }
+  }
+
+  public updateGraphData(): DataPoint[] {
+    let retGraphDataSet: DataPoint[] = _.sortBy(this.dataSet.dataPoints, 'cardId');
+
+    if (this.pumpSelVal !== 'all') retGraphDataSet = _.filter(this.dataSet.dataPoints, { 'pumpId': +this.pumpSelVal });
+    const startDateTime = new Date(String($("#" + DataColumns.startDate).val())).getTime() / 1000;
+    const endDateTime = new Date(String($("#" + DataColumns.endDate).val())).getTime() / 1000;
+
+    if (!isNaN(startDateTime) && !isNaN(endDateTime)) {
+      retGraphDataSet = _.filter(this.dataSet.dataPoints, (d) => {
+        if (d.epocDate >= startDateTime && d.epocDate <= endDateTime) {
+          return true;
+        }
+      });
+    }
+
+    if (this.eventSelVal !== 'all') retGraphDataSet = _.filter(retGraphDataSet, { 'eventId': +this.eventSelVal });
+
+    return retGraphDataSet;
   }
 
   private getTableData(): Promise<ViewModel> {
@@ -333,48 +370,6 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
     this.pumpCrdSvgGrp.attr({
       transform: "translate(" + this.margin.right + "," + (this.svgCanvasHeight / 2 - 30) + ")"
     });
-  }
-
-
-  private animateGraph(argGraphDataSet: DataPoint[]
-  ) {
-    const allDataPoints = _.sortBy(argGraphDataSet, 'cardId');
-    const surfaceDataGrp = _.groupBy(_.filter(allDataPoints, { 'cardType': 'S' }), 'cardHeaderId');
-    const pumpCardDataGrp = _.groupBy(_.filter(allDataPoints, { 'cardType': 'P' }), 'cardHeaderId');
-    const surCardDataArr = _.map(surfaceDataGrp, surfaceDataGrp.value);
-    const pumpCardDataArr = _.map(pumpCardDataGrp, pumpCardDataGrp.value);
-    this.surCrdSvgGrp.selectAll("path").remove();
-    this.pumpCrdSvgGrp.selectAll("path").remove();
-
-    const self = this;
-    for (const ci in surCardDataArr) {
-      const surCardData = surCardDataArr[ci];
-      const pumpCardData = pumpCardDataArr[ci];
-      setTimeout(() => {
-        this.renderCard(ci, surCardData, pumpCardData);
-      }, +ci * self.totalAnimationTime + 1900);
-    }
-
-  }
-
-  public updateGraphData(): DataPoint[] {
-    let retGraphDataSet: DataPoint[] = _.sortBy(this.dataSet.dataPoints, 'cardId');
-
-    if (this.pumpSelVal !== 'all') retGraphDataSet = _.filter(this.dataSet.dataPoints, { 'pumpId': +this.pumpSelVal });
-    const startDateTime = new Date(String($("#" + DataColumns.startDate).val())).getTime() / 1000;
-    const endDateTime = new Date(String($("#" + DataColumns.endDate).val())).getTime() / 1000;
-
-    if (!isNaN(startDateTime) && !isNaN(endDateTime)) {
-      retGraphDataSet = _.filter(this.dataSet.dataPoints, (d) => {
-        if (d.epocDate >= startDateTime && d.epocDate <= endDateTime) {
-          return true;
-        }
-      });
-    }
-
-    if (this.eventSelVal !== 'all') retGraphDataSet = _.filter(retGraphDataSet, { 'eventId': +this.eventSelVal });
-
-    return retGraphDataSet;
   }
 
   private createInitialHeader() {
