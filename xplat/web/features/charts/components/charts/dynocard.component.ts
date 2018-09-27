@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 
 import { DynoCardBaseComponent } from '@iot-edge-dynocard/features';
 import { DataService, UrlManagingService } from "@iot-edge-dynocard/core";
@@ -8,8 +8,8 @@ import { ViewChild, ElementRef } from '@angular/core';
 import * as d3 from "d3";
 import * as _ from "lodash";
 // import * as $ from "jQuery";
-import * as $ from 'jquery/dist/jquery.min.js';
-import 'eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js';
+// import * as $ from 'jquery/dist/jquery.min.js';
+// import 'eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js';
 
 // Interfaces
 export interface ViewModel {
@@ -64,16 +64,16 @@ export interface VisualUpdateOptions {
 }
 
 export class DataColumns {
-  static pumpId = "pumpId";
-  static eventId = "eventId";
-  static cardHeaderId = "cardHeaderID";
-  static epocDate = "epocDate";
+  static pumpId = "Pump_ID";
+  static eventId = "Event_ID";
+  static cardHeaderId = "CardHeader_ID";
+  static epocDate = "EPOC_DATE";
   static startDate = "startDate";
   static endDate = "endDate";
-  static cardType = "cardType";
-  static cardId = "cardId";
-  static position = "position";
-  static load = "load";
+  static cardType = "Card_Type";
+  static cardId = "Card_ID";
+  static position = "Position";
+  static load = "Load";
 }
 
 @Component({
@@ -83,7 +83,7 @@ export class DataColumns {
   encapsulation: ViewEncapsulation.None
 })
 
-export class DynoCardComponent extends DynoCardBaseComponent {
+export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
   chartData: any;
   @ViewChild('controls') controls: ElementRef;
   //---Power Bi
@@ -113,12 +113,12 @@ export class DynoCardComponent extends DynoCardBaseComponent {
   private plotteSurfacedPath: any;
   private plottePumpPath: any;
   private isDropDownRender: boolean = false;
-  private margin = { top: 100, right: 50, bottom: 80, left: 5 }
+  private margin = { top: 150, right: 100, bottom: -200, left: 0 }
   private totalAnimationTime: number = 2000;
 
   constructor(private dataService: DataService, private urlManagingService: UrlManagingService) {
     super();
-    this.svgCanvasWidth = 960;
+    this.svgCanvasWidth = 1400;
     this.svgCanvasHeight = 560;
 
     this.loadChartData()
@@ -183,10 +183,10 @@ export class DynoCardComponent extends DynoCardBaseComponent {
     //// create this in angular
     const pumpDD = this.createDropDown(DataColumns.pumpId);
     const eventDD = this.createDropDown(DataColumns.eventId);
-    const stratDatePicker = this.createDateTimePicker(DataColumns.startDate);
+    const startDatePicker = this.createDateTimePicker(DataColumns.startDate);
     const endDatePicker = this.createDateTimePicker(DataColumns.endDate);
     document.getElementById("controlDiv").appendChild(pumpDD);
-    document.getElementById("controlDiv").appendChild(stratDatePicker);
+    document.getElementById("controlDiv").appendChild(startDatePicker);
     document.getElementById("controlDiv").appendChild(endDatePicker);
     document.getElementById("controlDiv").appendChild(eventDD);
 
@@ -209,12 +209,13 @@ export class DynoCardComponent extends DynoCardBaseComponent {
     this.xAxisGroup.call(xAxisLine).attr({
       transform: "translate(" + this.margin.right + ", " + (this.svgCanvasHeight - 20) + ")"
     });
-    const yAxisLine = d3.svg.axis().scale(this.yAxis_Load).orient("left").tickSize(5).tickFormat(d => Number(d) / 1000 + ' klb');
+    const yAxisLine = d3.svg.axis().scale(this.yAxis_Load).orient("left").tickSize(5).tickFormat(d =>
+      Number(d) / 1 + ' klb');
     this.yAxisGroupSurface.call(yAxisLine).attr({
       transform: "translate(" + this.margin.right + ", 5)"
     });
     this.yAxisGroupPump.call(yAxisLine).attr({
-      transform: "translate(" + this.margin.right + ", " + (this.svgCanvasHeight / 2 - 10) + ")"
+      transform: "translate(" + this.margin.right + ", " + (this.svgCanvasHeight / 2) + ")"
     });
 
     //-- Define Path Draw function
@@ -246,73 +247,73 @@ export class DynoCardComponent extends DynoCardBaseComponent {
   private getTableData(): Promise<ViewModel> {
     return new Promise((resolve, reject) => {
 
-      let sampleData: DataPoint[] = [];
+      // let sampleData: DataPoint[] = [];
       let retDataView: ViewModel
 
       d3.csv("assets/dataset1.csv")
       // .row(this.rowConversion)
-        .get(function (error, data) {
+        .get(function (error, data: DataPoint[]) {
           if (error) reject(error);
           // console.log(data);
 
-          sampleData = data;
+          // sampleData = data;
 
           retDataView = {
-            dataPoints: sampleData,
-            maxValue: d3.max(sampleData, d => d.load)
+            dataPoints: data,
+            maxValue: d3.max(data, d => d.load)
           }
 
           // what is supposed to go here?
           // const dataView = options.dataViews[0].table.rows;
           // const columnArr = options.dataViews[0].table.columns;
           ////
-          const dataView = [{ data: 123 }];
-          const columnArr = [
-            {
-              roles: { pumpId: true }
-            },
-            {
-              roles: { eventId: true }
-            },
-            {
-              roles: { cardHeaderID: true }
-            },
-            {
-              roles: { cardType: true }
-            },
-            {
-              roles: { epocDate: true }
-            },
-            {
-              roles: { cardId: true }
-            },
-            {
-              roles: { position: true }
-            },
-            {
-              roles: { load: true }
-            }
-          ];
+          // const dataView = [{ data: 123 }];
+          // const columnArr = [
+          //   {
+          //     roles: { Pump_ID: true }
+          //   },
+          //   {
+          //     roles: { Event_ID: true }
+          //   },
+          //   {
+          //     roles: { CardHeader_ID: true }
+          //   },
+          //   {
+          //     roles: { Card_Type: true }
+          //   },
+          //   {
+          //     roles: { EPOC_DATE: true }
+          //   },
+          //   {
+          //     roles: { Card_ID: true }
+          //   },
+          //   {
+          //     roles: { Position: true }
+          //   },
+          //   {
+          //     roles: { Load: true }
+          //   }
+          // ];
 
-          const columnPos: any[] = [];
-          for (let i = 0; i < columnArr.length; i++) {
-            columnPos.push(String(Object.keys(columnArr[i].roles)[0]));
-          }
+          // const columnPos: any[] = [];
+          // for (let i = 0; i < columnArr.length; i++) {
+          //   columnPos.push(String(Object.keys(columnArr[i].roles)[0]));
+          // }
           // console.log(columnPos);
 
-          for (let i = 0; i < dataView.length; i++) {
-            retDataView.dataPoints.push({
-              pumpId: <number>+dataView[i][columnPos.indexOf(DataColumns.pumpId)],
-              eventId: <number>+dataView[i][columnPos.indexOf(DataColumns.eventId)],
-              cardHeaderId: <number> +dataView[i][columnPos.indexOf(DataColumns.cardHeaderId)],
-              epocDate: <number>+dataView[i][columnPos.indexOf(DataColumns.epocDate)],
-              cardType: <string>dataView[i][columnPos.indexOf(DataColumns.cardType)],
-              cardId: <number>dataView[i][columnPos.indexOf(DataColumns.cardId)],
-              position: <number>dataView[i][columnPos.indexOf(DataColumns.position)],
-              load: <number>+dataView[i][columnPos.indexOf(DataColumns.load)]
-            });
-          }
-          // console.log(retDataView);
+          // for (let i = 0; i < dataView.length; i++) {
+          //   retDataView.dataPoints.push({
+          //     pumpId: <number>+dataView[i][columnPos.indexOf(DataColumns.pumpId)],
+          //     eventId: <number>+dataView[i][columnPos.indexOf(DataColumns.eventId)],
+          //     cardHeaderId: <number> +dataView[i][columnPos.indexOf(DataColumns.cardHeaderId)],
+          //     epocDate: <number>+dataView[i][columnPos.indexOf(DataColumns.epocDate)],
+          //     cardType: <string>dataView[i][columnPos.indexOf(DataColumns.cardType)],
+          //     cardId: <number>dataView[i][columnPos.indexOf(DataColumns.cardId)],
+          //     position: <number>dataView[i][columnPos.indexOf(DataColumns.position)],
+          //     load: <number>+dataView[i][columnPos.indexOf(DataColumns.load)]
+          //   });
+          // }
+          console.log(retDataView);
           resolve(retDataView);
 
         }.bind(this))
@@ -475,7 +476,6 @@ export class DynoCardComponent extends DynoCardBaseComponent {
     spanOuter.onmouseover = (event: Event) => {
       $('#' + argDateType + "Picker").datetimepicker();
     }
-
     spanOuter.onclick = () => {
       this.rerenderEventDropDown();
     }
@@ -589,118 +589,6 @@ export class DynoCardComponent extends DynoCardBaseComponent {
     $("#" + DataColumns.endDate).val('');
     this.eventSelVal = 'all';
   }
-
-  // private renderSampleChart() {
-  //
-  //   const svg = d3.select("svg"),
-  //     margin = { top: 20, right: 80, bottom: 30, left: 50 },
-  //     width = svg.attr("width") - margin.left - margin.right,
-  //     height = svg.attr("height") - margin.top - margin.bottom,
-  //     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-  //
-  //   const parseTime = d3.timeParse("%Y%m%d");
-  //
-  //   const x = d3.scaleTime().range([0, width]),
-  //     y = d3.scaleLinear().range([height, 0]),
-  //     z = d3.scaleOrdinal(d3.schemeCategory10);
-  //
-  //   const line = d3.line()
-  //     .curve(d3.curveBasis)
-  //     .x(function (d) {
-  //       return x(d.date);
-  //     })
-  //     .y(function (d) {
-  //       return y(d.temperature);
-  //     });
-  //
-  //   d3.tsv("assets/data.tsv", this.rowConversion, function (error, data) {
-  //     if (error) throw error;
-  //
-  //     const cities = data.columns.slice(1).map(function (id) {
-  //       return {
-  //         id: id,
-  //         values: data.map(function (d) {
-  //           return { date: d.date, temperature: d[id] };
-  //         })
-  //       };
-  //     });
-  //
-  //     x.domain(d3.extent(data, function (d) {
-  //       return d.date;
-  //     }));
-  //
-  //     y.domain([
-  //       d3.min(cities, function (c) {
-  //         return d3.min(c.values, function (d) {
-  //           return d.temperature;
-  //         });
-  //       }),
-  //       d3.max(cities, function (c) {
-  //         return d3.max(c.values, function (d) {
-  //           return d.temperature;
-  //         });
-  //       })
-  //     ]);
-  //
-  //     z.domain(cities.map(function (c) {
-  //       return c.id;
-  //     }));
-  //
-  //     g.append("g")
-  //       .attr("class", "axis axis--x")
-  //       .attr("transform", "translate(0," + height + ")")
-  //       .call(d3.axisBottom(x));
-  //
-  //     g.append("g")
-  //       .attr("class", "axis axis--y")
-  //       .call(d3.axisLeft(y))
-  //       .append("text")
-  //       .attr("transform", "rotate(-90)")
-  //       .attr("y", 6)
-  //       .attr("dy", "0.71em")
-  //       .attr("fill", "#000")
-  //       .text("Temperature, ºF");
-  //
-  //     const city = g.selectAll(".city")
-  //       .data(cities)
-  //       .enter().append("g")
-  //       .attr("class", "city");
-  //
-  //     city.append("path")
-  //       .attr("class", "line")
-  //       .attr("d", function (d) {
-  //         return line(d.values);
-  //       })
-  //       .style("stroke", function (d) {
-  //         return z(d.id);
-  //       });
-  //
-  //     city.append("text")
-  //       .datum(function (d) {
-  //         return { id: d.id, value: d.values[d.values.length - 1] };
-  //       })
-  //       .attr("transform", function (d) {
-  //         return "translate(" + x(d.value.date) + "," + y(d.value.temperature) + ")";
-  //       })
-  //       .attr("x", 3)
-  //       .attr("dy", "0.35em")
-  //       .style("font", "10px sans-serif")
-  //       .text(function (d) {
-  //         return d.id;
-  //       });
-  //   });
-  //
-  //   // const cities = this.dataSet.dataPoints.columns.slice(1).map(function (id) {
-  //   //   return {
-  //   //     id: id,
-  //   //     values: this.dataSet.dataPoints.map(function (d) {
-  //   //       return { date: d.date, temperature: d[id] };
-  //   //     })
-  //   //   };
-  //   // }.bind(this));
-  //
-  //
-  // }
 
 
 }

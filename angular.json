@@ -86,7 +86,11 @@
               "xplat/web/scss/_index.scss",
               "apps/web-dynocard/src/styles.scss"
             ],
-            "scripts": ["node_modules/jquery/dist/jquery.min.js"]
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/moment/min/moment.min.js",
+              "node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"
+            ]
           },
           "configurations": {
             "production": {
