@@ -116,7 +116,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
   private plottePumpPath: any;
   private isDropDownRender: boolean = false;
   private margin = { top: 150, right: 100, bottom: -200, left: 0 }
-  private totalAnimationTime: number = 0;
+  private totalAnimationTime: number = 250;
 
   constructor(private dataService: DataService, private urlManagingService: UrlManagingService) {
     super();
@@ -170,7 +170,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
 
     this.dataSet = await this.getTableData();
 
-    console.log('this.getTableData(): ', this.dataSet)
+    // console.log('this.getTableData(): ', this.dataSet)
 
     this.dynoCardSvg.attr({
       width: this.svgCanvasWidth,
@@ -302,7 +302,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
           for (let i = 0; i < columnArr.length; i++) {
             columnPos.push(String(Object.keys(columnArr[i].roles)[0]));
           }
-          console.log(columnPos);
+          // console.log(columnPos);
 
           for (let i = 0; i < dataView.length; i++) {
             retDataView.dataPoints.push({
@@ -316,8 +316,8 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
               load: <number>+dataView[i][DataColumns.load]
             });
           }
-          console.log(csvData);
-          console.log(retDataView);
+          // console.log(csvData);
+          // console.log(retDataView);
           resolve(retDataView);
 
         }.bind(this))

@@ -1300,7 +1300,7 @@ var DynoCardComponent = /** @class */ (function (_super) {
         _this.pumpSelVal = 'all';
         _this.isDropDownRender = false;
         _this.margin = { top: 150, right: 100, bottom: -200, left: 0 };
-        _this.totalAnimationTime = 0;
+        _this.totalAnimationTime = 250;
         _this.svgCanvasWidth = 1400;
         _this.svgCanvasHeight = 560;
         _this.loadChartData();
@@ -1357,7 +1357,7 @@ var DynoCardComponent = /** @class */ (function (_super) {
                         return [4 /*yield*/, this.getTableData()];
                     case 1:
                         _a.dataSet = _b.sent();
-                        console.log('this.getTableData(): ', this.dataSet);
+                        // console.log('this.getTableData(): ', this.dataSet)
                         this.dynoCardSvg.attr({
                             width: this.svgCanvasWidth,
                             height: this.svgCanvasHeight = this.svgCanvasHeight - this.margin.top - this.margin.bottom
@@ -1474,7 +1474,7 @@ var DynoCardComponent = /** @class */ (function (_super) {
                 for (var i = 0; i < columnArr.length; i++) {
                     columnPos.push(String(Object.keys(columnArr[i].roles)[0]));
                 }
-                console.log(columnPos);
+                // console.log(columnPos);
                 for (var i = 0; i < dataView.length; i++) {
                     retDataView.dataPoints.push({
                         pumpId: +dataView[i][DataColumns.pumpId],
@@ -1487,8 +1487,8 @@ var DynoCardComponent = /** @class */ (function (_super) {
                         load: +dataView[i][DataColumns.load]
                     });
                 }
-                console.log(csvData);
-                console.log(retDataView);
+                // console.log(csvData);
+                // console.log(retDataView);
                 resolve(retDataView);
             }.bind(_this));
         });
