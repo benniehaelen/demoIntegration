@@ -116,12 +116,12 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
   private plotteSurfacedPath: any;
   private plottePumpPath: any;
   private isDropDownRender: boolean = false;
-  private margin = { top: 150, right: 100, bottom: -200, left: 0 }
+  private margin = { top: 150, right: 100, bottom: -100, left: 0 }
   private totalAnimationTime: number = 5000;
 
   constructor(private dataService: DataService, private urlManagingService: UrlManagingService) {
     super();
-    this.svgCanvasWidth = 1600;
+    this.svgCanvasWidth = 1200;
     this.svgCanvasHeight = 560;
 
     this.loadChartData()
