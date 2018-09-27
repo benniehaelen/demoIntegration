@@ -240,7 +240,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
       let csvData: DataPoint[] = [];
       let retDataView: ViewModel
 
-      d3.csv("assets/dataset2.csv")
+      d3.csv("assets/dataset1.csv")
       // .row(this.rowConversion) // doesn't seem to need a row conversion function to work
         .get(function (error, data: DataPoint[]) {
           if (error) reject(error);
