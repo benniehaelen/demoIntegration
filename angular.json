@@ -80,7 +80,8 @@
             "tsConfig": "apps/web-dynocard/tsconfig.app.json",
             "assets": [
               "apps/web-dynocard/src/favicon.ico",
-              "apps/web-dynocard/src/assets"
+              "apps/web-dynocard/src/assets",
+              "apps/web-dynocard/src/web.config"
             ],
             "styles": [
               "xplat/web/scss/_index.scss",

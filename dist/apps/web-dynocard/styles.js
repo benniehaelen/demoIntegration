@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
 
 /***/ "../../node_modules/raw-loader/index.js!../../node_modules/postcss-loader/lib/index.js??embedded!../../node_modules/sass-loader/lib/loader.js??ref--15-3!../../xplat/web/scss/_index.scss":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** /home/flytoy/DevSource/iot-edge-dynocard/node_modules/raw-loader!/home/flytoy/DevSource/iot-edge-dynocard/node_modules/postcss-loader/lib??embedded!/home/flytoy/DevSource/iot-edge-dynocard/node_modules/sass-loader/lib/loader.js??ref--15-3!/home/flytoy/DevSource/iot-edge-dynocard/xplat/web/scss/_index.scss ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** /home/flytoy/DevSource/iot-edge-dynocard-web/node_modules/raw-loader!/home/flytoy/DevSource/iot-edge-dynocard-web/node_modules/postcss-loader/lib??embedded!/home/flytoy/DevSource/iot-edge-dynocard-web/node_modules/sass-loader/lib/loader.js??ref--15-3!/home/flytoy/DevSource/iot-edge-dynocard-web/xplat/web/scss/_index.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12,9 +12,9 @@ module.exports = "/**\n * The following are shared across all platforms and apps
 /***/ }),
 
 /***/ "../../node_modules/raw-loader/index.js!../../node_modules/postcss-loader/lib/index.js??embedded!../../node_modules/sass-loader/lib/loader.js??ref--15-3!./src/styles.scss":
-/*!************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** /home/flytoy/DevSource/iot-edge-dynocard/node_modules/raw-loader!/home/flytoy/DevSource/iot-edge-dynocard/node_modules/postcss-loader/lib??embedded!/home/flytoy/DevSource/iot-edge-dynocard/node_modules/sass-loader/lib/loader.js??ref--15-3!./src/styles.scss ***!
-  \************************************************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** /home/flytoy/DevSource/iot-edge-dynocard-web/node_modules/raw-loader!/home/flytoy/DevSource/iot-edge-dynocard-web/node_modules/postcss-loader/lib??embedded!/home/flytoy/DevSource/iot-edge-dynocard-web/node_modules/sass-loader/lib/loader.js??ref--15-3!./src/styles.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -23,9 +23,9 @@ module.exports = ""
 /***/ }),
 
 /***/ "../../node_modules/style-loader/lib/addStyles.js":
-/*!*******************************************************************************************!*\
-  !*** /home/flytoy/DevSource/iot-edge-dynocard/node_modules/style-loader/lib/addStyles.js ***!
-  \*******************************************************************************************/
+/*!***********************************************************************************************!*\
+  !*** /home/flytoy/DevSource/iot-edge-dynocard-web/node_modules/style-loader/lib/addStyles.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -414,9 +414,9 @@ function updateLink (link, options, obj) {
 /***/ }),
 
 /***/ "../../node_modules/style-loader/lib/urls.js":
-/*!**************************************************************************************!*\
-  !*** /home/flytoy/DevSource/iot-edge-dynocard/node_modules/style-loader/lib/urls.js ***!
-  \**************************************************************************************/
+/*!******************************************************************************************!*\
+  !*** /home/flytoy/DevSource/iot-edge-dynocard-web/node_modules/style-loader/lib/urls.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -514,9 +514,9 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ "../../xplat/web/scss/_index.scss":
-/*!***************************************************************************!*\
-  !*** /home/flytoy/DevSource/iot-edge-dynocard/xplat/web/scss/_index.scss ***!
-  \***************************************************************************/
+/*!*******************************************************************************!*\
+  !*** /home/flytoy/DevSource/iot-edge-dynocard-web/xplat/web/scss/_index.scss ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -574,14 +574,14 @@ if(false) {}
 /***/ }),
 
 /***/ 2:
-/*!***************************************************************************************************!*\
-  !*** multi /home/flytoy/DevSource/iot-edge-dynocard/xplat/web/scss/_index.scss ./src/styles.scss ***!
-  \***************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** multi /home/flytoy/DevSource/iot-edge-dynocard-web/xplat/web/scss/_index.scss ./src/styles.scss ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/flytoy/DevSource/iot-edge-dynocard/xplat/web/scss/_index.scss */"../../xplat/web/scss/_index.scss");
-module.exports = __webpack_require__(/*! /home/flytoy/DevSource/iot-edge-dynocard/apps/web-dynocard/src/styles.scss */"./src/styles.scss");
+__webpack_require__(/*! /home/flytoy/DevSource/iot-edge-dynocard-web/xplat/web/scss/_index.scss */"../../xplat/web/scss/_index.scss");
+module.exports = __webpack_require__(/*! /home/flytoy/DevSource/iot-edge-dynocard-web/apps/web-dynocard/src/styles.scss */"./src/styles.scss");
 
 
 /***/ })
