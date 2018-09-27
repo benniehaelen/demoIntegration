@@ -7,6 +7,7 @@ import { ViewChild, ElementRef } from '@angular/core';
 // import * as d3 from "d3v4";
 import * as d3 from "d3";
 import * as _ from "lodash";
+declare var $;
 // import * as $ from "jQuery";
 // import * as $ from 'jquery/dist/jquery.min.js';
 // import 'eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js';

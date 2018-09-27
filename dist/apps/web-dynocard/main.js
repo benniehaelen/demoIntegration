@@ -1264,8 +1264,6 @@ var core_3 = __webpack_require__(/*! @angular/core */ "../../node_modules/@angul
 // import * as d3 from "d3v4";
 var d3 = __webpack_require__(/*! d3 */ "../../node_modules/d3/d3.js");
 var _ = __webpack_require__(/*! lodash */ "../../node_modules/lodash/lodash.js");
-// import * as $ from "jQuery";
-var $ = __webpack_require__(/*! jquery/dist/jquery.min.js */ "../../node_modules/jquery/dist/jquery.min.js");
 ;
 var VisualUpdateType;
 (function (VisualUpdateType) {
@@ -1627,10 +1625,7 @@ var DynoCardComponent = /** @class */ (function (_super) {
             dateInput.setAttribute("placeholder", "End Date");
             dateInput.setAttribute("value", "04/08/2019 12:00 AM");
         }
-        // spanOuter.addEventListener("mouseover", function (event) {
-        // });
         spanOuter.onmouseover = function (event) {
-            console.log(event);
             $('#' + argDateType + "Picker").datetimepicker();
         };
         spanOuter.onclick = function () {
