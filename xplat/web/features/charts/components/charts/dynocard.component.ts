@@ -65,6 +65,7 @@ export interface VisualUpdateOptions {
   editMode?: EditMode;
 }
 
+// This is an array of column names from the DataSet, the spelling must match exactly
 export class DataColumns {
   static pumpId = "Pump_ID";
   static eventId = "Event_ID";
@@ -116,7 +117,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
   private plottePumpPath: any;
   private isDropDownRender: boolean = false;
   private margin = { top: 150, right: 100, bottom: -200, left: 0 }
-  private totalAnimationTime: number = 250;
+  private totalAnimationTime: number = 5000;
 
   constructor(private dataService: DataService, private urlManagingService: UrlManagingService) {
     super();
@@ -169,7 +170,6 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
 
 
     this.dataSet = await this.getTableData();
-
     // console.log('this.getTableData(): ', this.dataSet)
 
     this.dynoCardSvg.attr({
@@ -182,7 +182,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
       childNodes.removeChild(childNodes.firstChild);
     }
 
-    //// create this in angular
+    // create this in angular
     const pumpDD = this.createDropDown(DataColumns.pumpId);
     const eventDD = this.createDropDown(DataColumns.eventId);
     const startDatePicker = this.createDateTimePicker(DataColumns.startDate);
@@ -221,7 +221,6 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
     });
 
     //-- Define Path Draw function
-
     this.drawLineFunc = d3.svg.line<DataPoint>().interpolate("cardinal")
       .x((dp: DataPoint) => {
         return this.xAxis_Position(dp.position);
@@ -230,18 +229,6 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
         return this.yAxis_Load(dp.load);
       });
 
-    //d3v4
-    // this.drawLineFunc = d3.line<DataPoint>()
-    //   .x((dp: DataPoint) => {
-    //     return this.xAxis_Position(dp.position);
-    //   })
-    //   .y((dp: DataPoint) => {
-    //     return this.yAxis_Load(dp.load);
-    //   })
-    //   .curve(d3.curveCardinal);
-
-
-    //this.updateDynoCardGraph(options);
     this.animateGraph(this.updateGraphData());
 
   }
@@ -254,55 +241,17 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
       let retDataView: ViewModel
 
       d3.csv("assets/dataset2.csv")
-      // .row(this.rowConversion)
+      // .row(this.rowConversion) // doesn't seem to need a row conversion function to work
         .get(function (error, data: DataPoint[]) {
           if (error) reject(error);
-          // console.log(data);
 
           csvData = data;
-
           retDataView = {
             dataPoints: dataPoints,
             maxValue: d3.max(data, d => d.load)
           }
 
-          // what is supposed to go here?
-          // const dataView = options.dataViews[0].table.rows;
-          // const columnArr = options.dataViews[0].table.columns;
-          //
           const dataView = csvData;
-          const columnArr = [
-            {
-              roles: { Pump_ID: true }
-            },
-            {
-              roles: { Event_ID: true }
-            },
-            {
-              roles: { CardHeader_ID: true }
-            },
-            {
-              roles: { Card_Type: true }
-            },
-            {
-              roles: { EPOC_DATE: true }
-            },
-            {
-              roles: { Card_ID: true }
-            },
-            {
-              roles: { Position: true }
-            },
-            {
-              roles: { Load: true }
-            }
-          ];
-
-          const columnPos: any[] = [];
-          for (let i = 0; i < columnArr.length; i++) {
-            columnPos.push(String(Object.keys(columnArr[i].roles)[0]));
-          }
-          // console.log(columnPos);
 
           for (let i = 0; i < dataView.length; i++) {
             retDataView.dataPoints.push({
@@ -316,8 +265,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
               load: <number>+dataView[i][DataColumns.load]
             });
           }
-          // console.log(csvData);
-          // console.log(retDataView);
+
           resolve(retDataView);
 
         }.bind(this))
