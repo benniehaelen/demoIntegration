@@ -12,7 +12,7 @@ import {
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 
-const translationsEn = require('../assets/i18n/en.json');
+const translationsEn = require('../assets/i18n/en');
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
