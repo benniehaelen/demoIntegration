@@ -1,4 +1,4 @@
-﻿pumpId,eventId,cardHeaderID,cardType,epocDate,cardId,position,load
+﻿Pump_ID,Event_ID,CardHeader_ID,Card_Type,EPOC_DATE,Card_ID,Position,Load
 1,43128,58509,P,1528833235,362154,12252,2694
 1,43297,58710,P,1528833235,362154,12252,2694
 1,43297,58710,P,1528833235,362153,12280,2559

@@ -7,6 +7,7 @@ import { ViewChild, ElementRef } from '@angular/core';
 // import * as d3 from "d3v4";
 import * as d3 from "d3";
 import * as _ from "lodash";
+
 declare var $;
 // import * as $ from "jQuery";
 // import * as $ from 'jquery/dist/jquery.min.js';
@@ -115,7 +116,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
   private plottePumpPath: any;
   private isDropDownRender: boolean = false;
   private margin = { top: 150, right: 100, bottom: -200, left: 0 }
-  private totalAnimationTime: number = 2000;
+  private totalAnimationTime: number = 0;
 
   constructor(private dataService: DataService, private urlManagingService: UrlManagingService) {
     super();
@@ -248,72 +249,74 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
   private getTableData(): Promise<ViewModel> {
     return new Promise((resolve, reject) => {
 
-      // let sampleData: DataPoint[] = [];
+      const dataPoints: DataPoint[] = [];
+      let csvData: DataPoint[] = [];
       let retDataView: ViewModel
 
-      d3.csv("assets/dataset1.csv")
+      d3.csv("assets/dataset2.csv")
       // .row(this.rowConversion)
         .get(function (error, data: DataPoint[]) {
           if (error) reject(error);
           // console.log(data);
 
-          // sampleData = data;
+          csvData = data;
 
           retDataView = {
-            dataPoints: data,
+            dataPoints: dataPoints,
             maxValue: d3.max(data, d => d.load)
           }
 
           // what is supposed to go here?
           // const dataView = options.dataViews[0].table.rows;
           // const columnArr = options.dataViews[0].table.columns;
-          ////
-          // const dataView = [{ data: 123 }];
-          // const columnArr = [
-          //   {
-          //     roles: { Pump_ID: true }
-          //   },
-          //   {
-          //     roles: { Event_ID: true }
-          //   },
-          //   {
-          //     roles: { CardHeader_ID: true }
-          //   },
-          //   {
-          //     roles: { Card_Type: true }
-          //   },
-          //   {
-          //     roles: { EPOC_DATE: true }
-          //   },
-          //   {
-          //     roles: { Card_ID: true }
-          //   },
-          //   {
-          //     roles: { Position: true }
-          //   },
-          //   {
-          //     roles: { Load: true }
-          //   }
-          // ];
+          //
+          const dataView = csvData;
+          const columnArr = [
+            {
+              roles: { Pump_ID: true }
+            },
+            {
+              roles: { Event_ID: true }
+            },
+            {
+              roles: { CardHeader_ID: true }
+            },
+            {
+              roles: { Card_Type: true }
+            },
+            {
+              roles: { EPOC_DATE: true }
+            },
+            {
+              roles: { Card_ID: true }
+            },
+            {
+              roles: { Position: true }
+            },
+            {
+              roles: { Load: true }
+            }
+          ];
 
-          // const columnPos: any[] = [];
-          // for (let i = 0; i < columnArr.length; i++) {
-          //   columnPos.push(String(Object.keys(columnArr[i].roles)[0]));
-          // }
-          // console.log(columnPos);
+          const columnPos: any[] = [];
+          for (let i = 0; i < columnArr.length; i++) {
+            columnPos.push(String(Object.keys(columnArr[i].roles)[0]));
+          }
+          console.log(columnPos);
 
-          // for (let i = 0; i < dataView.length; i++) {
-          //   retDataView.dataPoints.push({
-          //     pumpId: <number>+dataView[i][columnPos.indexOf(DataColumns.pumpId)],
-          //     eventId: <number>+dataView[i][columnPos.indexOf(DataColumns.eventId)],
-          //     cardHeaderId: <number> +dataView[i][columnPos.indexOf(DataColumns.cardHeaderId)],
-          //     epocDate: <number>+dataView[i][columnPos.indexOf(DataColumns.epocDate)],
-          //     cardType: <string>dataView[i][columnPos.indexOf(DataColumns.cardType)],
-          //     cardId: <number>dataView[i][columnPos.indexOf(DataColumns.cardId)],
-          //     position: <number>dataView[i][columnPos.indexOf(DataColumns.position)],
-          //     load: <number>+dataView[i][columnPos.indexOf(DataColumns.load)]
-          //   });
-          // }
+          for (let i = 0; i < dataView.length; i++) {
+            retDataView.dataPoints.push({
+              pumpId: <number>+dataView[i][DataColumns.pumpId],
+              eventId: <number>+dataView[i][DataColumns.eventId],
+              cardHeaderId: <number> +dataView[i][DataColumns.cardHeaderId],
+              epocDate: <number>+dataView[i][DataColumns.epocDate],
+              cardType: <string>dataView[i][DataColumns.cardType],
+              cardId: <number>dataView[i][DataColumns.cardId],
+              position: <number>dataView[i][DataColumns.position],
+              load: <number>+dataView[i][DataColumns.load]
+            });
+          }
+          console.log(csvData);
           console.log(retDataView);
           resolve(retDataView);
 
@@ -380,12 +383,13 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
     this.surCrdSvgGrp.selectAll("path").remove();
     this.pumpCrdSvgGrp.selectAll("path").remove();
 
+    const self = this;
     for (const ci in surCardDataArr) {
       const surCardData = surCardDataArr[ci];
       const pumpCardData = pumpCardDataArr[ci];
       setTimeout(() => {
         this.renderCard(ci, surCardData, pumpCardData);
-      }, +ci * this.totalAnimationTime);
+      }, +ci * self.totalAnimationTime);
     }
 
   }
@@ -586,8 +590,8 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
 
   private resetOtherControls() {
     $("#" + DataColumns.eventId).val('all');
-    $("#" + DataColumns.startDate).val('');
-    $("#" + DataColumns.endDate).val('');
+    // $("#" + DataColumns.startDate).val('');
+    // $("#" + DataColumns.endDate).val('');
     this.eventSelVal = 'all';
   }
 
