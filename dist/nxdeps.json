@@ -1,0 +1,11 @@
+{
+  "web-dynocard-e2e": [
+    {
+      "projectName": "web-dynocard",
+      "type": "implicit"
+    }
+  ],
+  "web-dynocard": [],
+  "xplat": [],
+  "libs": []
+}

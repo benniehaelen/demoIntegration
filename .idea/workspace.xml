@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6355b71e-49cc-4ecf-8d19-db915c70f869" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/web-dynocard/src/assets/js/bootstrap-datetimepicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/web-dynocard/src/assets/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/web-dynocard/src/assets/js/moment.min.js" afterDir="false" />
+    <list default="true" id="6355b71e-49cc-4ecf-8d19-db915c70f869" name="Default Changelist" comment="Rebuild app for production">
+      <change beforePath="$PROJECT_DIR$/.idea/iot-edge-dynocard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/iot-edge-dynocard.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-dynocard/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web-dynocard/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/apps/web-dynocard/3rdpartylicenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dist/apps/web-dynocard/3rdpartylicenses.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/apps/web-dynocard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/apps/web-dynocard/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/apps/web-dynocard/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/apps/web-dynocard/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/apps/web-dynocard/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/apps/web-dynocard/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/apps/web-dynocard/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/apps/web-dynocard/vendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/apps/web-dynocard/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/apps/web-dynocard/vendor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.style.css" beforeDir="false" afterPath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.style.css" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
+    <manually-removed-from-ignored>
+      <directory path="$PROJECT_DIR$/dist/" />
+    </manually-removed-from-ignored>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +35,7 @@
           <entry key="http-server" value="1" />
           <entry key="js" value="8" />
           <entry key="json" value="21" />
-          <entry key="md" value="1" />
+          <entry key="md" value="2" />
           <entry key="rollup-node" value="1" />
           <entry key="scss" value="4" />
           <entry key="ts" value="172" />
@@ -60,7 +48,7 @@
           <entry key="HTML" value="17" />
           <entry key="JSON" value="19" />
           <entry key="JavaScript" value="10" />
-          <entry key="Markdown" value="1" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="11" />
           <entry key="SCSS" value="3" />
           <entry key="Scratch" value="1" />
@@ -82,8 +70,8 @@
           <entry key="html" value="187" />
           <entry key="json" value="56" />
           <entry key="md" value="754" />
-          <entry key="ts" value="2553" />
-          <entry key="txt" value="440" />
+          <entry key="ts" value="2570" />
+          <entry key="txt" value="552" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -92,8 +80,8 @@
           <entry key="HTML" value="187" />
           <entry key="JSON" value="34" />
           <entry key="Markdown" value="754" />
-          <entry key="PLAIN_TEXT" value="452" />
-          <entry key="TypeScript" value="2553" />
+          <entry key="PLAIN_TEXT" value="564" />
+          <entry key="TypeScript" value="2570" />
           <entry key="tsconfig" value="22" />
         </counts>
       </usages-collector>
@@ -107,15 +95,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="473" column="5" selection-start-line="473" selection-start-column="5" selection-end-line="473" selection-end-column="5" />
+            <state relative-caret-position="462">
+              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
                 <element signature="e#294#319#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="264">
+                <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -208,7 +208,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>createInitialHeader</find>
       <find>DataColumns</find>
       <find>this.dataSet</find>
       <find>datapoints.data</find>
@@ -238,6 +237,7 @@
       <find>mouseover</find>
       <find>event</find>
       <find>onmou</find>
+      <find>event)</find>
     </findStrings>
     <replaceStrings>
       <replace>iot-edge-dynocard-root</replace>
@@ -358,97 +358,33 @@
             <path>
               <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
               <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="web-dynocard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="web-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="web-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="web-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="eonasdan-bootstrap-datetimepicker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="eonasdan-bootstrap-datetimepicker" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="eonasdan-bootstrap-datetimepicker" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="jquery" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="jquery" type="462c0819:PsiDirectoryNode" />
               <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
               <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="jquery" type="462c0819:PsiDirectoryNode" />
               <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="jquery.js" type="620a8d5e:NestingTreeNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
               <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="moment" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="web-dynocard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
               <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="moment" type="462c0819:PsiDirectoryNode" />
-              <item name="min" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="web-dynocard" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -467,7 +403,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/dev/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -577,7 +513,7 @@
       <updated>1537894948091</updated>
       <workItem from="1537894950822" duration="17671000" />
       <workItem from="1538002860473" duration="17392000" />
-      <workItem from="1538022024185" duration="4120000" />
+      <workItem from="1538022024185" duration="4606000" />
     </task>
     <task id="LOCAL-00001" summary="Initial app scaffoldings, cross platform ready - only web platform added and Charts feature module">
       <created>1537909012203</created>
@@ -628,11 +564,25 @@
       <option name="project" value="LOCAL" />
       <updated>1538021811319</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Switch to Bootstrap 3 - now controls render correclty&#10;DateTimePicker working">
+      <created>1538026210714</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1538026210714</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Rebuild app for production">
+      <created>1538026373175</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1538026373175</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39183000" />
+    <option name="totallyTimeSpent" value="39669000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -645,9 +595,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2160" y="783" width="2560" height="1403" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17891374" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17891374" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -668,7 +617,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info active="true" anchor="right" id="Run" order="5" visible="true" weight="0.19369009" />
+      <window_info anchor="right" id="Run" order="5" visible="true" weight="0.19369009" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -687,7 +636,9 @@
     <MESSAGE value="Begin porting in powerBI rendering from Rabbani" />
     <MESSAGE value="Graph renders X and Y axis + controls - only data lines left" />
     <MESSAGE value="Data points render, plot needs fixing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data points render, plot needs fixing" />
+    <MESSAGE value="Switch to Bootstrap 3 - now controls render correclty&#10;DateTimePicker working" />
+    <MESSAGE value="Rebuild app for production" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rebuild app for production" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/xplat/web/features/items/items.module.ts" />
@@ -972,16 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="418">
-            <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/scss/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1231,12 +1172,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="473" column="5" selection-start-line="473" selection-start-column="5" selection-end-line="473" selection-end-column="5" />
+        <state relative-caret-position="462">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
             <element signature="e#294#319#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="264">
+            <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
