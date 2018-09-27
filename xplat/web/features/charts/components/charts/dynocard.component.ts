@@ -121,7 +121,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
 
   constructor(private dataService: DataService, private urlManagingService: UrlManagingService) {
     super();
-    this.svgCanvasWidth = 1400;
+    this.svgCanvasWidth = 1600;
     this.svgCanvasHeight = 560;
 
     this.loadChartData()
@@ -203,7 +203,10 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
     });
 
     //--- Define X & Y  Axis Scale and Line
-    const xMax = d3.max(this.dataSet.dataPoints, d => d.position);
+    let xMax = d3.max(this.dataSet.dataPoints, d => {
+      return d.position
+    });
+    xMax = 14000;
     this.xAxis_Position = d3.scale.linear().domain([-1, xMax]).range([0, this.svgCanvasWidth]);
     this.yAxis_Load = d3.scale.linear().domain(d3.extent(this.dataSet.dataPoints, d => d.load)).range([this.svgCanvasHeight / 2, 0]);
 
