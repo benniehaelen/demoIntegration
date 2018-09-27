@@ -207,13 +207,16 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
 
     //--- Define X & Y  Axis Scale and Line
     const xMax = d3.max(this.dataSet.dataPoints, d => d.position);
-    this.xAxis_Position = d3.scale.linear().domain([-1, xMax]).range([-1, this.svgCanvasWidth - 100]);
+    this.xAxis_Position = d3.scale.linear().domain([-1, xMax]).range([0, this.svgCanvasWidth - 100]);
     this.yAxis_Load = d3.scale.linear().domain(d3.extent(this.dataSet.dataPoints, d => d.load)).range([this.svgCanvasHeight / 2, 0]);
 
+    // Draw X axis line
     const xAxisLine = d3.svg.axis().scale(this.xAxis_Position).orient("bottom").tickSize(5).tickFormat(d => d + ' in');
     this.xAxisGroup.call(xAxisLine).attr({
       transform: "translate(" + this.margin.right + ", " + (this.svgCanvasHeight - 20) + ")"
     });
+
+    // Draw Y axis line
     const yAxisLine = d3.svg.axis().scale(this.yAxis_Load).orient("left").tickSize(5).tickFormat(d =>
       Number(d) / 1000 + ' klb');
     this.yAxisGroupSurface.call(yAxisLine).attr({
@@ -224,7 +227,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
     });
 
     //-- Define Path Draw function
-    this.drawLineFunc = d3.svg.line<DataPoint>().interpolate("cardinal")
+    this.drawLineFunc = d3.svg.line<DataPoint>().interpolate("basis")
       .x((dp: DataPoint) => {
         return this.xAxis_Position(dp.position);
       })
@@ -232,7 +235,15 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
         return this.yAxis_Load(dp.load);
       });
 
-    this.animateGraph(this.updateGraphData());
+    // For some reason, the first time the animateGraph() method is called, the surfacePumpCard does not render properly, and cuts off the right end of the lines. If animateGraph() is called a second time, then it renders fine, so this accomplishes that. Not ideal but it works.
+    this.animateGraph(this.updateGraphData())
+    let count = 0;
+    const interval = setInterval(function () {
+      count++;
+      // console.log('animating graph');
+      this.animateGraph(this.updateGraphData())
+      if (count > 0) clearInterval(interval)
+    }.bind(this), 1900)
 
   }
 
@@ -282,7 +293,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
     plotSurfacePath.exit().remove();
     plotSurfacePath.attr("stroke", "steelblue")
       .attr("stroke-width", 2)
-      .attr("fill", "#ccc")
+      .attr("fill", "none")
       .attr("d", this.drawLineFunc);
     this.plotteSurfacedPath = d3.select(document.getElementById("surfaceCard")).selectAll("path");
     const surfacePathLength = this.plotteSurfacedPath.node().getTotalLength();
@@ -341,7 +352,7 @@ export class DynoCardComponent extends DynoCardBaseComponent implements OnInit {
       const pumpCardData = pumpCardDataArr[ci];
       setTimeout(() => {
         this.renderCard(ci, surCardData, pumpCardData);
-      }, +ci * self.totalAnimationTime);
+      }, +ci * self.totalAnimationTime + 1900);
     }
 
   }
