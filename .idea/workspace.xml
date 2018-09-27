@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6355b71e-49cc-4ecf-8d19-db915c70f869" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/iot-edge-dynocard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/iot-edge-dynocard.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PowerBI-visuals.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web-dynocard/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web-dynocard/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web-dynocard/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web-dynocard/tsconfig.app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/core/services/data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/services/data.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/tslint.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.style.css" beforeDir="false" afterPath="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.style.css" afterDir="false" />
@@ -31,27 +35,31 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="1" />
-          <entry key="csv" value="2" />
+          <entry key="css" value="2" />
+          <entry key="csv" value="5" />
           <entry key="gitignore" value="2" />
-          <entry key="html" value="14" />
-          <entry key="json" value="12" />
+          <entry key="html" value="16" />
+          <entry key="js" value="4" />
+          <entry key="json" value="20" />
           <entry key="md" value="1" />
+          <entry key="rollup-node" value="1" />
           <entry key="scss" value="4" />
-          <entry key="ts" value="163" />
+          <entry key="ts" value="172" />
           <entry key="tsv" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="1" />
-          <entry key="HTML" value="14" />
-          <entry key="JSON" value="12" />
+          <entry key="CSS" value="2" />
+          <entry key="HTML" value="16" />
+          <entry key="JSON" value="18" />
+          <entry key="JavaScript" value="5" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="PLAIN_TEXT" value="9" />
           <entry key="SCSS" value="3" />
           <entry key="Scratch" value="1" />
-          <entry key="TypeScript" value="163" />
+          <entry key="TypeScript" value="172" />
+          <entry key="tsconfig" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -62,23 +70,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="16" />
+          <entry key="css" value="24" />
+          <entry key="csv" value="3" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="127" />
-          <entry key="json" value="6" />
+          <entry key="html" value="154" />
+          <entry key="json" value="46" />
           <entry key="md" value="754" />
-          <entry key="ts" value="872" />
-          <entry key="txt" value="262" />
+          <entry key="ts" value="2245" />
+          <entry key="txt" value="321" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="16" />
-          <entry key="HTML" value="127" />
-          <entry key="JSON" value="6" />
+          <entry key="CSS" value="24" />
+          <entry key="HTML" value="154" />
+          <entry key="JSON" value="24" />
           <entry key="Markdown" value="754" />
-          <entry key="PLAIN_TEXT" value="263" />
-          <entry key="TypeScript" value="872" />
+          <entry key="PLAIN_TEXT" value="325" />
+          <entry key="TypeScript" value="2245" />
+          <entry key="tsconfig" value="22" />
         </counts>
       </usages-collector>
     </session>
@@ -92,31 +102,91 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="518">
+              <caret line="207" column="61" selection-start-line="207" selection-start-column="47" selection-end-line="207" selection-end-column="61" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
+                <element signature="e#292#319#0" expanded="true" />
+                <element signature="e#350#397#0" expanded="true" />
+                <element signature="e#19708#19740#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset1.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset3.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="63" selection-start-column="63" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/@types/d3/index.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-608">
+              <caret line="2691" column="14" selection-start-line="2691" selection-start-column="14" selection-end-line="2691" selection-end-column="14" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="137" column="20" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tsconfig.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" selection-start-line="9" selection-end-line="11" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/core/services/data.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+            <state relative-caret-position="512">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="e#30#93#0" expanded="true" />
               </folding>
@@ -125,10 +195,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.style.css">
+        <entry file="file://$PROJECT_DIR$/apps/web-dynocard/tsconfig.app.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="110">
+              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -136,8 +206,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+            <state relative-caret-position="638">
+              <caret line="66" column="25" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -146,41 +216,47 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>LogService</find>
-      <find>WindowPlatformService</find>
-      <find>`</find>
-      <find>WindowService</find>
-      <find>dynocard-root</find>
-      <find>dataservice</find>
-      <find>dynocard</find>
-      <find>declar</find>
-      <find>@NgModule</find>
-      <find>'@iot-edge-dynocard/features</find>
-      <find>HeaderBaseComponent</find>
-      <find>declarations</find>
-      <find>DynocardBaseComponent</find>
-      <find>html</find>
-      <find>ChartsModule</find>
-      <find>chartsmod</find>
-      <find>charts</find>
-      <find>ChartsBaseComponent</find>
-      <find>UIModule</find>
-      <find>import { environment }</find>
-      <find>subtree</find>
-      <find>var</find>
-      <find>en.json</find>
-      <find>createTranslateLoader</find>
-      <find>assets</find>
-      <find>000</find>
-      <find>fill</find>
       <find>#</find>
       <find>IS_Na</find>
       <find>isNativeScript</find>
+      <find>no-inferr</find>
+      <find>no-in</find>
+      <find>VisualUpdateType</find>
+      <find>type</find>
+      <find>parseTime</find>
+      <find>main</find>
+      <find>animateGraph</find>
+      <find>this.dataS</find>
+      <find>csv</find>
+      <find>cvs</find>
+      <find>d3.scale.linear</find>
+      <find>scale</find>
+      <find>app</find>
+      <find>scripts</find>
+      <find>xAxisGroup</find>
+      <find>createDateTimePicker</find>
+      <find>createInitialHeader</find>
+      <find>DataColumns</find>
+      <find>datetime</find>
+      <find>this.dataSet</find>
+      <find>datapoints.data</find>
+      <find>cardHeaderId</find>
+      <find>this.svgCanvasHeight</find>
+      <find>createDropDown</find>
+      <find>maxvalue</find>
+      <find>.datapoints</find>
+      <find>d =&gt; d.</find>
     </findStrings>
     <replaceStrings>
       <replace>iot-edge-dynocard-root</replace>
       <replace>let</replace>
+      <replace>d3.scaleLinear</replace>
+      <replace>this.dataSet.dataPoints</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/node_modules/d3v4</dir>
+      <dir>$PROJECT_DIR$/node_modules/@types</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -189,7 +265,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/libs/features/items/routes.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/dist/apps/web-dynocard/index.html" />
         <option value="$PROJECT_DIR$/apps/web-dynocard/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/libs/core/services/data.service-custom.ts" />
@@ -210,13 +285,21 @@
         <option value="$PROJECT_DIR$/libs/core/services/url-managing.service.ts" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/xplat/web/package.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/PowerBI-visuals.d.ts" />
+        <option value="$PROJECT_DIR$/tslint.json" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/apps/web-dynocard/tsconfig.app.json" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/libs/core/services/data.service.ts" />
         <option value="$PROJECT_DIR$/angular.json" />
         <option value="$PROJECT_DIR$/apps/web-dynocard/src/index.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.html" />
         <option value="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.style.css" />
         <option value="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.ts" />
-        <option value="$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.html" />
-        <option value="$PROJECT_DIR$/libs/core/services/data.service.ts" />
+        <option value="$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset1.csv" />
+        <option value="$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset2.csv" />
+        <option value="$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset3.csv" />
       </list>
     </option>
   </component>
@@ -283,11 +366,6 @@
             <path>
               <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
               <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -314,65 +392,11 @@
             <path>
               <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
               <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="xplat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="xplat" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="xplat" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="xplat" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="xplat" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-              <item name="charts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="xplat" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-              <item name="charts" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot-edge-dynocard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot-edge-dynocard" type="462c0819:PsiDirectoryNode" />
-              <item name="xplat" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-              <item name="charts" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="charts" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="web-dynocard" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="i18n" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -396,6 +420,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/libs/core/services" />
     </key>
   </component>
@@ -498,7 +523,7 @@
       <option name="presentableId" value="Default" />
       <updated>1537894948091</updated>
       <workItem from="1537894950822" duration="17671000" />
-      <workItem from="1538002860473" duration="950000" />
+      <workItem from="1538002860473" duration="14804000" />
     </task>
     <task id="LOCAL-00001" summary="Initial app scaffoldings, cross platform ready - only web platform added and Charts feature module">
       <created>1537909012203</created>
@@ -528,37 +553,54 @@
       <option name="project" value="LOCAL" />
       <updated>1537918162596</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Begin porting in powerBI rendering from Rabbani">
+      <created>1538003864518</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1538003864519</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18621000" />
+    <option name="totallyTimeSpent" value="32475000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="2160" y="-1" width="2560" height="1403" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1773163" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" order="0" />
-      <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.32866555" />
-      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.32920793" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32920793" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="9" weight="0.32920793" />
+      <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32920793" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32838285" />
       <window_info anchor="right" id="Palette&#9;" order="0" />
       <window_info anchor="right" id="Database" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="right" id="Run" order="5" visible="true" weight="0.2474359" />
+      <window_info anchor="right" id="Run" order="5" visible="true" weight="0.19369009" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +616,8 @@
     <MESSAGE value="Add data service and urlmanaging service, load data in dynocard component oninit" />
     <MESSAGE value="Add data service and urlmanaging service, load data in dynocard component oninit&#10;Commit Dist folder" />
     <MESSAGE value="Add D3 sample data&#10;Update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add D3 sample data&#10;Update readme" />
+    <MESSAGE value="Begin porting in powerBI rendering from Rabbani" />
+    <option name="LAST_COMMIT_MESSAGE" value="Begin porting in powerBI rendering from Rabbani" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/xplat/web/features/items/items.module.ts" />
@@ -892,13 +935,6 @@
     <entry file="file://$PROJECT_DIR$/apps/web-dynocard/src/assets/data.tsv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="80" column="19" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.scss" />
     <entry file="file://$PROJECT_DIR$/xplat/web/core/core.module.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -915,13 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -951,47 +980,197 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset1.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/web-dynocard/src/index.html">
+    <entry file="file://$PROJECT_DIR$/PowerBI-visuals.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="17292">
+          <caret line="765" column="1" selection-start-line="765" selection-start-column="1" selection-end-line="765" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" selection-start-line="9" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tslint.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+        <state relative-caret-position="638">
+          <caret line="66" column="25" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.html">
+    <entry file="file://$PROJECT_DIR$/apps/web-dynocard/tsconfig.app.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="110">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/d3-transition/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="260">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/core/services/data.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+        <state relative-caret-position="512">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="e#30#93#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jquery/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="115" column="7" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/d3v4/build/d3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/d3v4/bin/rollup-node">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/d3-fetch/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="15125" column="4" selection-start-line="15125" selection-start-column="4" selection-end-line="15125" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="137" column="20" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/web-dynocard/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/d3/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/d3/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/d3/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-608">
+          <caret line="2691" column="14" selection-start-line="2691" selection-start-column="14" selection-end-line="2691" selection-end-column="14" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xplat/web/features/charts/components/charts/dynocard.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="207" column="61" selection-start-line="207" selection-start-column="47" selection-end-line="207" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+            <element signature="e#292#319#0" expanded="true" />
+            <element signature="e#350#397#0" expanded="true" />
+            <element signature="e#19708#19740#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset2.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="63" selection-start-column="63" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset1.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/web-dynocard/src/assets/dataset3.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="63" selection-start-column="63" selection-end-column="63" />
         </state>
       </provider>
     </entry>

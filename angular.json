@@ -86,7 +86,7 @@
               "xplat/web/scss/_index.scss",
               "apps/web-dynocard/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/jquery/dist/jquery.min.js"]
           },
           "configurations": {
             "production": {

@@ -2,7 +2,9 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc/apps/web-dynocard",
-    "types": []
+    "types": [
+      "node"
+    ]
   },
   "exclude": [
     "src/test.ts",

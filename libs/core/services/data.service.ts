@@ -29,25 +29,25 @@ export class DataService {
 
   constructor(private http: HttpClient) {
 
-    this.mockDataInit();
+    // this.mockDataInit();
 
   }
 
-  async mockDataInit() {
+  // async mockDataInit() {
 
-    // For Web
-    if (!isNativeScript()) {
-      // resolve mockdata with webpack at compile time so its available for web, because web has no filesystem access like native
-      require('../../../apps/web-dynocard/src/assets/dataset1')
-        .then((response) => {
-          this.mockData = response;
-        })
-        .catch((err) => {
-          return err;
-        });
-
-      // For nativescript
-    }
+    // // For Web
+    // if (!isNativeScript()) {
+    //   // resolve mockdata with webpack at compile time so its available for web, because web has no filesystem access like native
+    //   require('file-loader!../../../apps/web-dynocard/src/assets/dataset1.csv')
+    //     .then((response) => {
+    //       this.mockData = response;
+    //     })
+    //     .catch((err) => {
+    //       return err;
+    //     });
+    //
+    //   // For nativescript
+    // }
     // else {
     //   // Nativescript will use `file-system` to access the file locally, at a different path than webpack
     //   this.fileReader.readJSON("../../assets/mock-data/course-plan")
@@ -58,13 +58,30 @@ export class DataService {
     //       err;
     //     });
     // }
-  }
+  // }
 
   get(url: string, requestOptionsArgs?, options?: { mockData: boolean, mockDataFile?: string }): Observable<any> {
     const self = this;
 
     // clear and reset the state of headers before each request, to prevent issues with mixing states between requests
     delete this.requestOptions;
+
+    if (options) {
+      if (!options.mockData) {
+      } else if (options.mockData === true) {
+
+        // Until nodejs server is setup, just return json directly here
+        // passed in value should be relative too `src` root i.e. if its located at ./src/path-to-asset/here.txt, then just enter path-to-asset/here.txt
+        const mockData = this.mockData[options.mockDataFile];
+        return of(mockData);
+      }
+      // If options.mockData is false or not set
+      // If the statement gets to here, it needs to be \`true\`, else throw error
+      else if (!options.mockData === true) {
+        throw new Error("mockData not set to boolean type. Must be true or false.");
+      }
+
+    }
 
     // The Angular HttpClient Way
     const requestOptions = {
