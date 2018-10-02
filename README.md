@@ -7,6 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 This project is pushed to an Azure App Service located at [https://iotdynocardmoxa-web.azurewebsites.net](https://iotdynocardmoxa-web.azurewebsites.net/). The compiled project is pushed using git subtrees.
 
 The specific command to push the DynoCard webapp is:
+- `git remote add azure https://dynocard@iotdynocardmoxa-web.scm.azurewebsites.net:443/iotdynocardmoxa-web.git`
 - `git subtree push --prefix dist/apps/web-dynocard azure master`
 
 The command syntax to create and manage a git subtree is:
