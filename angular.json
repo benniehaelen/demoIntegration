@@ -1,91 +1,29 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "",
+  "newProjectRoot": "projects",
   "projects": {
-    "libs": {
-      "root": "libs",
-      "sourceRoot": "libs",
-      "projectType": "library",
-      "prefix": "dynocard",
-      "architect": {
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "testing/test.libs.ts",
-            "tsConfig": "testing/tsconfig.libs.spec.json",
-            "karmaConfig": "testing/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "testing/tsconfig.libs.json",
-              "testing/tsconfig.libs.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "xplat": {
-      "root": "xplat",
-      "sourceRoot": "xplat",
-      "projectType": "library",
-      "prefix": "dynocard",
-      "architect": {
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "testing/test.xplat.ts",
-            "tsConfig": "testing/tsconfig.xplat.spec.json",
-            "karmaConfig": "testing/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "testing/tsconfig.xplat.json",
-              "testing/tsconfig.xplat.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "web-dynocard": {
-      "root": "apps/web-dynocard/",
-      "sourceRoot": "apps/web-dynocard/src",
+    "iot-edge-dynocard-web": {
+      "root": "",
+      "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "iot-edge-dynocard",
-      "schematics": {
-        "@schematics/angular:component": {
-          "styleext": "scss"
-        }
-      },
+      "prefix": "app",
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/web-dynocard",
-            "index": "apps/web-dynocard/src/index.html",
-            "main": "apps/web-dynocard/src/main.ts",
-            "polyfills": "apps/web-dynocard/src/polyfills.ts",
-            "tsConfig": "apps/web-dynocard/tsconfig.app.json",
+            "outputPath": "dist/iot-edge-dynocard-web",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "apps/web-dynocard/src/favicon.ico",
-              "apps/web-dynocard/src/assets",
-              "apps/web-dynocard/src/web.config"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "xplat/web/scss/_index.scss",
-              "apps/web-dynocard/src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -97,8 +35,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/web-dynocard/src/environments/environment.ts",
-                  "with": "apps/web-dynocard/src/environments/environment.prod.ts"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -116,34 +54,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "web-dynocard:build"
+            "browserTarget": "iot-edge-dynocard-web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "web-dynocard:build:production"
+              "browserTarget": "iot-edge-dynocard-web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "web-dynocard:build"
+            "browserTarget": "iot-edge-dynocard-web:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "apps/web-dynocard/src/test.ts",
-            "polyfills": "apps/web-dynocard/src/polyfills.ts",
-            "tsConfig": "apps/web-dynocard/tsconfig.spec.json",
-            "karmaConfig": "apps/web-dynocard/karma.conf.js",
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "apps/web-dynocard/src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": [],
             "assets": [
-              "apps/web-dynocard/src/favicon.ico",
-              "apps/web-dynocard/src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ]
           }
         },
@@ -151,8 +89,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/web-dynocard/tsconfig.app.json",
-              "apps/web-dynocard/tsconfig.spec.json"
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -161,26 +99,26 @@
         }
       }
     },
-    "web-dynocard-e2e": {
-      "root": "apps/web-dynocard-e2e/",
+    "iot-edge-dynocard-web-e2e": {
+      "root": "e2e/",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "apps/web-dynocard-e2e/protractor.conf.js",
-            "devServerTarget": "web-dynocard:serve"
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "iot-edge-dynocard-web:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "web-dynocard:serve:production"
+              "devServerTarget": "iot-edge-dynocard-web:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "apps/web-dynocard-e2e/tsconfig.e2e.json",
+            "tsConfig": "e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -189,11 +127,5 @@
       }
     }
   },
-  "cli": {
-    "warnings": {
-      "typescriptMismatch": false,
-      "versionMismatch": false
-    },
-    "defaultCollection": "@nstudio/schematics"
-  }
+  "defaultProject": "iot-edge-dynocard-web"
 }

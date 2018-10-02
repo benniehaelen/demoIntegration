@@ -1,11 +1,15 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "module": "es2015",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "baseUrl": ".",
     "target": "es5",
     "typeRoots": [
       "node_modules/@types"
@@ -13,25 +17,6 @@
     "lib": [
       "es2017",
       "dom"
-    ],
-    "baseUrl": ".",
-    "paths": {
-      "@iot-edge-dynocard/*": [
-        "libs/*"
-      ],
-      "@iot-edge-dynocard/web": [
-        "xplat/web/index.ts"
-      ],
-      "@iot-edge-dynocard/web/*": [
-        "xplat/web/*"
-      ]
-    }
-  },
-  "include": [
-    "**/*.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+    ]
+  }
 }
