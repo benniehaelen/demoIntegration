@@ -8,7 +8,11 @@ This project is pushed to an Azure App Service located at [https://iotdynocardmo
 
 The specific command to push the DynoCard webapp is:
 - `git remote add azure https://dynocard@iotdynocardmoxa-web.scm.azurewebsites.net:443/iotdynocardmoxa-web.git`
-- `git subtree push --prefix dist/apps/web-dynocard azure master`
+- `git subtree push --prefix dist/iot-edge-dynocard-web azure master`
+
+If running into issues mergine subtrees, See:
+- https://stackoverflow.com/questions/33172857/how-do-i-force-a-subtree-push-to-overwrite-remote-changes
+- https://community.atlassian.com/t5/Questions/How-can-one-eliminate-subtree-commit-history-due-to-a-remote/qaq-p/76357
 
 The command syntax to create and manage a git subtree is:
 
