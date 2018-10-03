@@ -1,4 +1,4 @@
-// data.service.ts - For Web
+// data.service.ts
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -23,40 +23,40 @@ interface RequestOptions {
 
 @Injectable()
 export class DataService {
-  private mockData = {}
+  private mockData = {};
   private requestOptions: RequestOptions = {};
 
   constructor(private http: HttpClient) {
-
     // this.mockDataInit();
-
   }
 
   // async mockDataInit() {
-
-    // // For Web
-    // if (!isNativeScript()) {
-    //   // resolve mockdata with webpack at compile time so its available for web, because web has no filesystem access like native
-    //   require('file-loader!../../../apps/web-dynocard/src/assets/dataset1.csv')
-    //     .then((response) => {
-    //       this.mockData = response;
-    //     })
-    //     .catch((err) => {
-    //       return err;
-    //     });
-    //
-    //   // For nativescript
-    // }
-    // else {
-    //   // Nativescript will use `file-system` to access the file locally, at a different path than webpack
-    //   this.fileReader.readJSON("../../assets/mock-data/course-plan")
-    //     .then((response) => {
-    //       this.mockData = response;
-    //     })
-    //     .catch((err) => {
-    //       err;
-    //     });
-    // }
+  //
+  //   // For Web
+  //   if (!isNativeScript()) {
+  //     // resolve mockdata with webpack at compile time so its available for web, because web has no filesystem access like native
+  //     require('file-loader!../../../apps/web-dynocard/src/assets/dataset1.csv')
+  //       .then((response) => {
+  //         //change `mockDataFile` to a reference to the filename being loaded, so it can be used in [GET] options.mockDataFile
+  //         this.mockData.mockDataFile = response;
+  //       })
+  //       .catch((err) => {
+  //         return err;
+  //       });
+  //
+  //     // For NativeScript
+  //   }
+  //   else {
+  //     // Nativescript will use `file-system` to access the file locally, at a different path than webpack
+  //     this.fileReader.readJSON('../../assets/mock-data/course-plan')
+  //       .then((response) => {
+  //         //change `mockDataFile` to a reference to the filename being loaded
+  //         this.mockData.mockDataFile = response;
+  //       })
+  //       .catch((err) => {
+  //         err;
+  //       });
+  //   }
   // }
 
   get(url: string, requestOptionsArgs?, options?: { mockData: boolean, mockDataFile?: string }): Observable<any> {
@@ -78,7 +78,7 @@ export class DataService {
       // If options.mockData is false or not set
       // If the statement gets to here, it needs to be \`true\`, else throw error
       else if (!options.mockData === true) {
-        throw new Error("mockData not set to boolean type. Must be true or false.");
+        throw new Error('mockData not set to boolean type. Must be true or false.');
       }
 
     }
@@ -99,7 +99,7 @@ export class DataService {
       .pipe(
         // retry(3), // retry a failed request up to 3 times
         catchError(this.handleError('GET')),
-      )
+      );
   }
 
   post(url: string, body: any, contentType?: string, requestOptionsArgs?, options?: { mockData: boolean }): Observable<any> {
@@ -123,7 +123,7 @@ export class DataService {
       .pipe(
         // retry(3), // retry a failed request up to 3 times
         catchError(this.handleError('POST'))
-      )
+      );
   }
 
   handleError(operation = 'operation', result?) {
