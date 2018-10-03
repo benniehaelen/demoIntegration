@@ -69,8 +69,9 @@ export class DataService {
       if (!options.mockData) {
       } else if (options.mockData === true) {
 
-        // Until nodejs server is setup, just return json directly here
-        // passed in value should be relative too `src` root i.e. if its located at ./src/path-to-asset/here.txt, then just enter path-to-asset/here.txt
+        // Until nodejs server is setup, just return json directly here passed in value should be relative too `src` root
+        // i.e. if its located at ./src/path-to-asset/here.txt, then just enter path-to-asset/here.txt
+        // options.mockDataFile is a reference to a property which is populated in mockDataInit()
         const mockData = this.mockData[options.mockDataFile];
         return of(mockData);
       }
