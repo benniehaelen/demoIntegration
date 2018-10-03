@@ -1,14 +1,15 @@
 import { AppPage } from './app.po';
 
-describe('workspace-project App', () => {
+describe('IOT Edge DynoCard App', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should have a dynocard-chart element', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to iot-edge-dynocard-web!');
+    // expect(page.getParagraphText()).toEqual('hi');
+    expect(page.getDynoCardElement().isPresent()).toBeTruthy();
   });
 });
